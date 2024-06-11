@@ -1,0 +1,47 @@
+{
+  "name": "pandx-wheel-client",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "author": {
+    "name": "pandx.com.cn",
+    "email": "admin@pandx.com.cn",
+    "url": "https://www.pandx.com.cn/wheel/"
+  },
+  "scripts": {
+    "dev": "vite",
+    "serve": "vite",
+    "build:dev": "vite build --mode development",
+    "build:pro": "vite build --mode production",
+    "preview": "npm run build:dev && vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-regular-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@microsoft/signalr": "^8.0.0",
+    "@vueuse/core": "^10.5.0",
+    "axios": "^1.6.0",
+    "cropperjs": "^1.6.2",
+    "dayjs": "^1.11.10",
+    "default-passive-events": "^2.0.0",
+    "downloadjs": "^1.4.7",
+    "element-plus": "^2.4.4",
+    "mitt": "^3.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.6",
+    "pinia-plugin-persist": "^1.0.0",
+    "screenfull": "^6.0.2",
+    "sortablejs": "^1.15.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "sass": "^1.69.4",
+    "vite": "^5.0.10"
+  }
+}
