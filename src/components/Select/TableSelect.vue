@@ -166,7 +166,8 @@ defineExpose({
     <div class="mb4 over">
       <el-tag class="mr6 mb4" size="small" type="info">已选</el-tag>
       <el-tag v-if="!selected.length" class="mr6 mb4" effect="plain" size="small" type="info"></el-tag>
-      <el-tag v-for="item in selected" v-else :key="item.id" :closable="!props.disabled" :type="props.tagType" class="mr6 mb4"
+      <el-tag v-for="item in selected" v-else :key="item.id" :closable="!props.disabled" :type="props.tagType"
+              class="mr6 mb4"
               effect="plain" size="small" @close="handleClose(item)">
         {{ item[props.displayProperty] }}
       </el-tag>

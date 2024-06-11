@@ -374,7 +374,8 @@ const handleOpen = () => {
              @open="handleOpen">
     <el-tabs v-model="defaultTab">
       <el-tab-pane label="角色详情" name="a">
-        <el-form ref="formRef" :disabled="props.isBrowse" :hide-required-asterisk="false" :model="props.data" :rules="rules"
+        <el-form ref="formRef" :disabled="props.isBrowse" :hide-required-asterisk="false" :model="props.data"
+                 :rules="rules"
                  label-position="top" label-suffix=" :" label-width="100">
 
           <el-form-item label="角色名称" prop="displayName">

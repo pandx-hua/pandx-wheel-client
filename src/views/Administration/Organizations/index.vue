@@ -431,7 +431,8 @@ onMounted(async () => {
             <el-table-column fixed="left" type="selection" width="40"></el-table-column>
             <el-table-column align="center" label="操作" width="60">
               <template #default="scope">
-                <el-button :disabled="!hasPermission('Permission.Organizations.Remove')" :icon="RemoveFilled" :link="true"
+                <el-button :disabled="!hasPermission('Permission.Organizations.Remove')" :icon="RemoveFilled"
+                           :link="true"
                            title="移除成员" type="danger"
                            @click="singleRemove(scope.row)"></el-button>
               </template>

@@ -261,7 +261,8 @@ onMounted(async () => {
       <el-table-column :filters="filters" align="center" column-key="status" label="状态" min-width="80" prop="status"
                        width="80">
         <template #default="scope">
-          <el-switch v-model="scope.row.status" :disabled="!hasPermission('Permission.Jobs.Change')" active-color="#67c23a"
+          <el-switch v-model="scope.row.status" :disabled="!hasPermission('Permission.Jobs.Change')"
+                     active-color="#67c23a"
                      active-text="启用" inactive-color="#f56c6c" inactive-text="停用" inline-prompt
                      size="default"
                      @change="handleStatusChange(scope.row)"></el-switch>

@@ -106,15 +106,15 @@ defineExpose({openDialog});
              label-position="top" label-suffix=" :" label-width="100">
       <div class="avatar-wrapper">
         <div class="avatar-box">
-          <el-avatar :src="avatarJpg" class="avatar" shape="square"
-                     v-if="!personalStore.avatar"></el-avatar>
-          <el-avatar :src="`data:image/png;base64,${personalStore.avatar}`" class="avatar" shape="square"
-                     v-if="personalStore.avatar"></el-avatar>
+          <el-avatar v-if="!personalStore.avatar" :src="avatarJpg" class="avatar"
+                     shape="square"></el-avatar>
+          <el-avatar v-if="personalStore.avatar" :src="`data:image/png;base64,${personalStore.avatar}`" class="avatar"
+                     shape="square"></el-avatar>
         </div>
         <div class="form-box">
           <el-form-item label="账号" prop="userName">
-            <el-input v-model="user.userName" :clearable="false" :maxlength="256" placeholder=""
-                      :readonly="true"></el-input>
+            <el-input v-model="user.userName" :clearable="false" :maxlength="256" :readonly="true"
+                      placeholder=""></el-input>
           </el-form-item>
           <el-form-item label="姓名" prop="name">
             <el-input v-model="user.name" :clearable="true" :maxlength="64" placeholder=""></el-input>

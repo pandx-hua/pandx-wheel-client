@@ -17,20 +17,20 @@ export const $refreshToken = (payload) => {
     });
 };
 
-export const $updateUser=(payload)=>{
-    return ajax.post('/Personal/UpdateUser',payload);
+export const $updateUser = (payload) => {
+    return ajax.post('/Personal/UpdateUser', payload);
 };
 
-export const $changePersonalPassword=(payload)=>{
-    return ajax.post('/Personal/ChangePersonalPassword',payload);
-}
+export const $changePersonalPassword = (payload) => {
+    return ajax.post('/Personal/ChangePersonalPassword', payload);
+};
 
-export const $getLoginAttempts=()=>{
+export const $getLoginAttempts = () => {
     return ajax.post('/Personal/GetLoginAttempts');
-}
+};
 
-export const $getAvatar=()=>{
+export const $getAvatar = () => {
     return ajax.post('/Personal/GetAvatar');
-}
+};
 
-export const $uploadAvatar='/Personal/UploadAvatar';
+export const $uploadAvatar = '/Personal/UploadAvatar';

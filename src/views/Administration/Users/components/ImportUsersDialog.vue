@@ -76,13 +76,13 @@ defineExpose({
         第 2 步：选择填写好用户信息的Excel文件准备上传；
       </p>
     </div>
-    <el-upload ref="uploadRef" :drag="true" action="" :before-upload="beforeUpload"
-               accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+    <el-upload ref="uploadRef" :before-upload="beforeUpload" :drag="true" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel"
+               action="">
       <el-icon class="el-icon--upload">
         <UploadFilled></UploadFilled>
       </el-icon>
-      <div class="el-upload__text" v-if="!uploadFile">将文件拖放到这或者<em>点击选择文件</em></div>
-      <div class="el-upload__text" v-if="uploadFile">{{ uploadFile && uploadFile.name }}</div>
+      <div v-if="!uploadFile" class="el-upload__text">将文件拖放到这或者<em>点击选择文件</em></div>
+      <div v-if="uploadFile" class="el-upload__text">{{ uploadFile && uploadFile.name }}</div>
     </el-upload>
     <div class="tip-box mt16">
       第 3 步：点击确定上传Excel文件，导入工作将在后台进程中执行，完毕后会给出提示并告知结果。

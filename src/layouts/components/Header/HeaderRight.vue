@@ -29,7 +29,7 @@ const personalStore = usePersonalStore();
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right:0;
+  padding-right: 0;
 
   .header-icon {
     display: flex;

@@ -56,7 +56,7 @@ const handleChangeSuccess = () => {
   ElMessage.success(`已成功修改密码`);
 };
 
-const handleUpdateSuccess = async() => {
+const handleUpdateSuccess = async () => {
   await personalStore.getAvatar();
 };
 </script>
@@ -69,8 +69,9 @@ const handleUpdateSuccess = async() => {
             class="user-link">{{ personalStore.user.name }}（{{
             personalStore.user.userName
           }} / {{ personalStore.user.email }}）</span>
-        <el-avatar :size="40" :src="avatarJpg" v-if="!personalStore.avatar"></el-avatar>
-        <el-avatar :size="40" :src="`data:image/png;base64,${personalStore.avatar}`" v-if="personalStore.avatar"></el-avatar>
+        <el-avatar v-if="!personalStore.avatar" :size="40" :src="avatarJpg"></el-avatar>
+        <el-avatar v-if="personalStore.avatar" :size="40"
+                   :src="`data:image/png;base64,${personalStore.avatar}`"></el-avatar>
         <el-icon class="arrow-box">
           <ArrowDownBold/>
         </el-icon>

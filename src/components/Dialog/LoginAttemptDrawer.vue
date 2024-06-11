@@ -36,8 +36,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <el-drawer v-model="visible" :destroy-on-close="true" title="登录记录" size="640">
-    <el-card v-for="item in personalStore.loginAttempts" key="item.id" shadow="hover" class="mb10">
+  <el-drawer v-model="visible" :destroy-on-close="true" size="640" title="登录记录">
+    <el-card v-for="item in personalStore.loginAttempts" key="item.id" class="mb10" shadow="hover">
       <el-row :gutter="16">
         <el-col :span="4" class="key">IP地址：</el-col>
         <el-col :span="20" class="value">{{ item.clientIpAddress }}</el-col>
@@ -52,10 +52,10 @@ onMounted(async () => {
       </el-row>
       <el-row :gutter="16">
         <el-col :span="4" class="key">登录结果：</el-col>
-        <el-col :span="20" class="value" v-if="!item.result">
+        <el-col v-if="!item.result" :span="20" class="value">
           <el-text type="success">{{ formattedResult(item.result) }}</el-text>
         </el-col>
-        <el-col :span="20" class="value" v-if="item.result">
+        <el-col v-if="item.result" :span="20" class="value">
           <el-text type="danger">{{ formattedResult(item.result) }}</el-text>
         </el-col>
       </el-row>

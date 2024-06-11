@@ -97,7 +97,7 @@ export const usePersonalStore = defineStore('personalStore', () => {
             'user',
             'token',
             'grantedPermissions',
-            'avatar'
+            'avatar',
         ]),
 
     },

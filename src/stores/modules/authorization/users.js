@@ -6,7 +6,8 @@ import {
     $changePassword,
     $createOrUpdateUser,
     $deleteUser,
-    $exportUsersToExcel, $getAvatarById,
+    $exportUsersToExcel,
+    $getAvatarById,
     $getPagedUsers,
     $unlockUser,
     $validateEmail,
@@ -22,7 +23,7 @@ export const useUserStore = defineStore('userStore', () => {
     const pageSize = ref(10);
     const deletedCount = ref(0);
     const cachedFile = ref({});
-    const avatar=ref('');
+    const avatar = ref('');
 
     const getPagedUsers = async (payload) => {
         try {
@@ -63,10 +64,10 @@ export const useUserStore = defineStore('userStore', () => {
         await $changePassword(payload);
     };
 
-    const getAvatarById=async (payload)=>{
-        const response=await $getAvatarById(payload);
-        avatar.value=response.data.result;
-    }
+    const getAvatarById = async (payload) => {
+        const response = await $getAvatarById(payload);
+        avatar.value = response.data.result;
+    };
 
     const exportUsersToExcel = async (payload) => {
         const response = await $exportUsersToExcel(payload);

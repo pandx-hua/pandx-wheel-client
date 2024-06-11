@@ -116,15 +116,15 @@ const reset = () => {
   cropper.value.destroy();
 };
 const handleClick = async () => {
-  if(!insideSrc.value){
+  if (!insideSrc.value) {
     ElMessage.error('选择要裁剪的图像后再操作');
-  }else{
+  } else {
     loading.value = true;
     const canvas = cropper.value.getCroppedCanvas();
     canvas.toBlob((blob) => {
       const formData = new FormData();
       formData.append('croppedImg', blob);
-      ajax.post($uploadAvatar,formData).then(response => {
+      ajax.post($uploadAvatar, formData).then(response => {
         ElMessage.success('头像更换成功');
         emits('update-success');
         visible.value = false;
@@ -151,14 +151,14 @@ defineExpose({
              @close="handleClose">
     <div class="cropper-wrapper">
       <div class="img-box bg">
-        <img class="cropper-image" :id="imgId" alt="">
+        <img :id="imgId" alt="" class="cropper-image">
       </div>
       <div class="right-wrapper">
-        <div v-if="preview" class="preview-box bg" :id="previewId"></div>
+        <div v-if="preview" :id="previewId" class="preview-box bg"></div>
         <div class="button-box">
-          <el-upload :before-upload="beforeUpload" action=""
-                     accept="image/jpg,image/jpeg,image/gif,image/png">
-            <el-button style="width: 150px;" type="primary" :icon="Upload">选择图像</el-button>
+          <el-upload :before-upload="beforeUpload" accept="image/jpg,image/jpeg,image/gif,image/png"
+                     action="">
+            <el-button :icon="Upload" style="width: 150px;" type="primary">选择图像</el-button>
           </el-upload>
           <div v-show="insideSrc">
             <el-button type="primary" @click="rotate">
@@ -230,8 +230,8 @@ defineExpose({
     </div>
     <template #footer>
       <el-button :icon="Close" @click="visible=false">取消</el-button>
-      <el-button :icon="Check" :loading="loading" type="primary" @click="handleClick(formRef)"
-                 :disabled="insideSrc==='' || disabled">确认
+      <el-button :disabled="insideSrc==='' || disabled" :icon="Check" :loading="loading" type="primary"
+                 @click="handleClick(formRef)">确认
       </el-button>
     </template>
   </el-dialog>

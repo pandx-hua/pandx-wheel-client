@@ -236,7 +236,7 @@ const acceptParams = (params) => {
   if (props.value.isUpdate || props.value.isBrowse) {
     nextTick(async () => {
       treeSelectRef.value && treeSelectRef.value.setCheckedKeys(props.value.data.organizations.map(i => i.id));
-      await userStore.getAvatarById({id:props.value.data.id});
+      await userStore.getAvatarById({id: props.value.data.id});
     });
   }
 };
@@ -304,14 +304,15 @@ onMounted(async () => {
   <el-drawer v-model="visible" :destroy-on-close="true" :title="props.title" size="50%" @close="handleClose">
     <el-tabs v-model="defaultTab">
       <el-tab-pane label="用户详情" name="a">
-        <el-form ref="formRef" :disabled="props.isBrowse" :hide-required-asterisk="false" :model="props.data" :rules="rules"
+        <el-form ref="formRef" :disabled="props.isBrowse" :hide-required-asterisk="false" :model="props.data"
+                 :rules="rules"
                  label-position="top" label-suffix=" :" label-width="100">
           <div class="avatar-wrapper">
             <div class="avatar-box">
-              <el-avatar :src="avatarJpg" class="avatar" shape="square"
-                       v-if="!userStore.avatar"></el-avatar>
-              <el-avatar :src="`data:image/png;base64,${userStore.avatar}`" class="avatar" shape="square"
-                         v-if="userStore.avatar"></el-avatar>
+              <el-avatar v-if="!userStore.avatar" :src="avatarJpg" class="avatar"
+                         shape="square"></el-avatar>
+              <el-avatar v-if="userStore.avatar" :src="`data:image/png;base64,${userStore.avatar}`" class="avatar"
+                         shape="square"></el-avatar>
             </div>
             <div class="form-box">
               <el-form-item label="账号" prop="userName">

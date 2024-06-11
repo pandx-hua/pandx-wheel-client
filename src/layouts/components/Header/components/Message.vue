@@ -27,7 +27,7 @@ const handleLoad = async () => {
 };
 
 const handleClick = async (data) => {
-  if(!data.state){
+  if (!data.state) {
     await notificationStore.setUserNotificationAsRead({id: data.id});
   }
 };
